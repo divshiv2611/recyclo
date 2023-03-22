@@ -22,11 +22,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildscript {
+        ext {
+            // ...
+            java_mail_version = "1.6.7"
+        }
+        // ...
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    packagingOptions{
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/LICENSE.md'
+    }
 }
+
 
 dependencies {
 
@@ -34,6 +47,12 @@ dependencies {
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
+    implementation "com.sun.mail:android-mail:1.6.7"
+//    implementation 'com.sun.mail:android.mail:1.6.7'
+//    implementation 'com.sun.mail:android.activation:1.6.7'
+//    implementation 'javax.mail:javax.mail-api:1.6.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
 }
