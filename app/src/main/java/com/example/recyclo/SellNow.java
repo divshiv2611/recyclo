@@ -9,8 +9,11 @@ import android.os.StrictMode;
 import android.provider.ContactsContract;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,15 +30,16 @@ import java.util.Properties;
 
 import java.util.jar.Attributes;
 
-public class SellNow extends AppCompatActivity {
+public class SellNow extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText name1;
     private EditText address1;
     private EditText phone1;
-    private EditText type1;
+    private Spinner type1;
     private EditText weight1;
     private TextView price1;
     private Button sell1;
+    private int pos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,12 @@ public class SellNow extends AppCompatActivity {
         weight1=findViewById(R.id.weight);
 //        price1=findViewById(R.id.price);
         sell1=findViewById(R.id.sell);
+        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.TypeOfWaste, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        type1.setAdapter(adapter);
+        type1.setOnItemSelectedListener(this);
+
+
 
         sell1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +66,7 @@ public class SellNow extends AppCompatActivity {
                 String msgToSend1=name1.getText().toString();
                 String msgToSend2=address1.getText().toString();
                 String msgToSend3=phone1.getText().toString();
-                String msgToSend4=type1.getText().toString();
+                String msgToSend4=type1.getItemAtPosition(pos).toString();
                 String msgToSend5=weight1.getText().toString();
 //                String msgToSend6=price1.getText().toString();
 
@@ -78,23 +88,11 @@ public class SellNow extends AppCompatActivity {
                     message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("divyanshsinghds2611@gmail.com"));
                     message.setSubject("Mail for recyclable waste collection");
                     message.setText(msgToSend1+"\n"+msgToSend2+"\n"+msgToSend3+"\n"+msgToSend4+"\n"+msgToSend5);
-//                    message.setText(msgToSend2);
-//                    message.setText(msgToSend3);
-//                    message.setText(msgToSend4);
-//                    message.setText(msgToSend5);
-//                    message.setText(msgToSend6);
                     Transport.send(message);
                     Toast.makeText(getApplicationContext(),"email sent successfully",Toast.LENGTH_LONG).show();
 
-                    setContentView(R.layout.activity_main);
-                    sell1=findViewById(R.id.sell);
-                    sell1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent=new Intent(SellNow.this,thankyoupage.class);
-                            startActivity(intent);
-                        }
-                    });
+                    Intent intent=new Intent(SellNow.this,thankyoupage.class);
+                    startActivity(intent);
                 }
                 catch(MessagingException e){
                     throw new RuntimeException(e);
@@ -105,5 +103,17 @@ public class SellNow extends AppCompatActivity {
         //to make android fast and smoother
         StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text=parent.getItemAtPosition(position).toString();
+        pos=position;
+        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

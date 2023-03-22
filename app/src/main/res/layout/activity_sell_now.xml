@@ -74,7 +74,7 @@
             android:inputType="number"
             android:textColor="@color/black" />
 
-        <EditText
+        <Spinner
             android:id="@+id/type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,7 +93,8 @@
             android:height="30dp"
             android:background="@drawable/rounded_border"
             android:gravity="center"
-            android:hint="Estimated Weight of Waste"
+            android:hint="Estimated Weight of Waste in KG"
+            android:inputType="number"
             android:textColor="@color/black" />
 
         <TextView

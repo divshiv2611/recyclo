@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="TypeOfWaste">
+        <item>NewsPaper and NoteBook</item>
+        <item>Plastic Materials</item>
+        <item>Glass Materails</item>
+        <item>Bio Waste</item>
+        <item>Manufacturing Waste</item>
+    </string-array>
+</resources>
