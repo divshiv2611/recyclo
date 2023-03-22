@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SellNow">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/img"
+        android:scaleType="centerCrop"
+        android:alpha="0.6"/>
+
+    <LinearLayout
+
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sell Your Waste"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/black">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reduce.Reuse.Recycle"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:textSize="20dp"
+            ></TextView>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Full Name"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_border"
+            android:height="30dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Address"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_border"
+            android:height="30dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Phone Number"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_border"
+            android:height="30dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type Of Waste"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_border"
+            android:height="30dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Estimated Weight of Waste"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_border"
+            android:height="30dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Estimated Price"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_border"
+            android:height="30dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Sell"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_button"></Button>
+
+    </LinearLayout>
+</RelativeLayout>
