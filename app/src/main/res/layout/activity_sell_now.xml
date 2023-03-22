@@ -93,20 +93,12 @@
             android:height="30dp"
             android:background="@drawable/rounded_border"
             android:gravity="center"
-            android:hint="Estimated Weight of Waste in KG"
+            android:textSize="20dp"
+            android:hint="Estimated Weight of Waste KG"
             android:inputType="number"
             android:textColor="@color/black" />
 
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:height="30dp"
-            android:background="@drawable/rounded_border"
-            android:gravity="center"
-            android:hint="Estimated Price"
-            android:textColor="@color/black" />
+
 
         <Button
             android:id="@+id/sell"
