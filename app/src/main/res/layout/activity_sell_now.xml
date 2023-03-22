@@ -101,7 +101,9 @@
             android:text="Sell"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:background="@drawable/rounded_button"></Button>
+            android:background="@drawable/rounded_button">
+
+        </Button>
 
     </LinearLayout>
 </RelativeLayout>
