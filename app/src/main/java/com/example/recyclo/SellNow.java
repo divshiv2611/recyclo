@@ -60,7 +60,7 @@ public class SellNow extends AppCompatActivity implements AdapterView.OnItemSele
             sell1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (name1.length() == 0 || address1.length() == 0 || phone1.length() != 10 || weight1.length() == 0)
+                    if (name1.length() == 0 || address1.length() == 0 || phone1.length() != 10 || weight1.length() == 0 )
                         Toast.makeText(getApplicationContext(),"Entries are Not filled Properly",Toast.LENGTH_SHORT).show();
                     else {
                         final String username = "divyanshsinghds2002@gmail.com";

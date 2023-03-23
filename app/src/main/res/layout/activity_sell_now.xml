@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/img"
         android:scaleType="centerCrop"
-        android:alpha="0.6"/>
+        android:alpha="0.8"/>
 
     <LinearLayout
 
@@ -50,7 +50,8 @@
             android:background="@drawable/rounded_border"
             android:gravity="center"
             android:hint="Enter Your Full Name"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/address"
@@ -61,7 +62,8 @@
             android:background="@drawable/rounded_border"
             android:gravity="center"
             android:hint="Enter Your Address"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/phone"
@@ -73,18 +75,10 @@
             android:gravity="center"
             android:hint="Enter Your Phone Number"
             android:inputType="number"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
-        <Spinner
-            android:id="@+id/type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:height="30dp"
-            android:background="@drawable/rounded_border"
-            android:gravity="center"
-            android:hint="Type Of Waste"
-            android:textColor="@color/black" />
+
 
         <EditText
             android:id="@+id/weight"
@@ -94,11 +88,23 @@
             android:height="30dp"
             android:background="@drawable/rounded_border"
             android:gravity="center"
-            android:textSize="20dp"
             android:hint="Estimated Weight of Waste KG"
             android:inputType="number"
-            android:textColor="@color/black" />
-
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20dp" />
+        <Spinner
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:height="30dp"
+            android:background="@drawable/rounded_border"
+            android:gravity="center"
+            android:hint="Type Of Waste"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
 
         <Button
